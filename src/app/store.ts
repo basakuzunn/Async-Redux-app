@@ -5,11 +5,12 @@ import {
   applyMiddleware,
 } from '@reduxjs/toolkit';
 import postsReducers from './postsReducers';
-
+import usersReducer from './usersReducer';
 
 export const store = configureStore({
   reducer: {
     posts: postsReducers,
+    users: usersReducer,
   },
 });
 

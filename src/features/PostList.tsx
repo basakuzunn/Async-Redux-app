@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { fetchPosts } from '../actions';
+import { fetchPostsAndUsers } from '../actions';
 import { store } from '../app/store';
 import UserHeader from './UserHeader';
 
@@ -13,7 +13,7 @@ interface posts {
 
 class PostList extends React.Component<any, any> {
   componentDidMount() {
-    this.props.fetchPosts();
+    this.props.fetchPostsAndUsers();
   }
   renderList() {
     return this.props.posts.map((post: posts) => {
@@ -41,4 +41,4 @@ const mapStateToProps = (state: any) => {
   return { posts: state.posts };
 };
 
-export default connect(mapStateToProps, { fetchPosts })(PostList);
+export default connect(mapStateToProps, { fetchPostsAndUsers })(PostList);
